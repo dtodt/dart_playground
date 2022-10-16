@@ -34,7 +34,7 @@ void chooseFibonacciSequence(List<String> arguments) {
 void printFibonacciSequence(int desiredCount) {
   final startingPoint = DateTime.now();
   print('*** Fibonacci ***');
-  if (desiredCount > 25) {
+  if (desiredCount > 40) {
     print(buildFibonacciFastDoublingSequence(desiredCount));
   } else {
     print(buildFibonacciSequence(desiredCount));

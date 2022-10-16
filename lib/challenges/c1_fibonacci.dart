@@ -16,14 +16,13 @@ List<BigInt> buildFibonacciFastDoublingSequence(int desiredCount) {
 
 /// Fibonacci
 int _f(int n) {
-  if (n < 2) return n;
+  if (n <= 2) return _untilTwo(n);
   return _f(n - 1) + _f(n - 2);
 }
 
 /// Fibonacci Fast Doubling
 BigInt _ffd(int n) {
-  if (n == 0) return BigInt.from(0);
-  if (n <= 2) return BigInt.from(1);
+  if (n <= 2) return BigInt.from(_untilTwo(n));
 
   final int k = n ~/ 2;
   final a = _ffd(k);
@@ -33,4 +32,8 @@ BigInt _ffd(int n) {
     return a * a + b * b;
   }
   return a * (BigInt.from(2) * b - a);
+}
+
+int _untilTwo(int n) {
+  return n == 0 ? 0 : 1;
 }
