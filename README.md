@@ -16,8 +16,8 @@ dart run bin/dart_playground.dart <challenge id>
 ### Fibonacci
 
 Shell:
-// fibonacci default algorithm
 ```sh
+// fibonacci default algorithm
 dart run bin/dart_playground.dart 1
 
 // fibonacci default algorithm increment count
