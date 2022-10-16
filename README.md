@@ -15,6 +15,8 @@ dart run bin/dart_playground.dart <challenge id>
 
 ### Fibonacci
 
+Algorithm explanation: [medium](https://medium.com/@ani1998ket/deriving-the-fast-fibonacci-identities-without-matrices-o-log-n-4cd9ce69d9d4)
+
 Shell:
 ```sh
 // fibonacci
