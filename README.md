@@ -17,13 +17,16 @@ dart run bin/dart_playground.dart <challenge id>
 
 Shell:
 ```sh
-// fibonacci default algorithm
+// fibonacci
+dart run bin/dart_playground.dart 1 <desired count> <print limit> <algorithm>
+
+// fibonacci default
 dart run bin/dart_playground.dart 1
 
-// fibonacci default algorithm increment count
+// fibonacci increment count
 dart run bin/dart_playground.dart 1 15
 
-// fibonacci default algorithm reduce output
+// fibonacci reduce output
 dart run bin/dart_playground.dart 1 10 5
 
 // fibonacci fast algorithm
