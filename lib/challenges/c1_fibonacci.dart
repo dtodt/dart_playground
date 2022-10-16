@@ -26,10 +26,10 @@ void printFibonacciSequence({int? count, int? limit, String? algorithm}) {
 List<String> _buildFibonacciSequence(
     int desiredCount, int collectionLimit, FibonacciAlgorithm f) {
   final sequence = <String>[];
-  for (var n = 0; n < desiredCount; n++) {
+  for (var n = 0; n <= desiredCount; n++) {
     if (collectionLimit == _kDefaultLimit ||
         n + 2 < collectionLimit ||
-        n + 1 == desiredCount) {
+        n == desiredCount) {
       final result = f(n);
       sequence.add('$result');
     } else if (n + 2 == desiredCount) {
