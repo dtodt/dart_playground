@@ -63,7 +63,7 @@ BigInt _ffd(int n) {
   if (n % 2 != 0) {
     return a * a + b * b;
   }
-  return a * (BigInt.from(2) * b - a);
+  return a * (BigInt.two * b - a);
 }
 
 BigInt _untilTwo(int n) {
