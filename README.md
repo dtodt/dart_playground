@@ -1,7 +1,7 @@
 
 # FLutterando - Masterclass 6
 
-## Challenges
+## Dart Challenges
 
 1. Fibonacci sequence;
 
