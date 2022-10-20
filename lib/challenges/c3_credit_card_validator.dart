@@ -7,10 +7,15 @@ bool validateCreditCard(String number) {
   final numberDigits = parseNumberDigits(cleanedNumber);
 
   final lastDigit = numberDigits.removeLast();
-  final cardSum = calculateCardDigits(numberDigits);
+  final allTheSame = numberDigits.every((digit) => digit == lastDigit);
+  if (allTheSame) {
+    return false;
+  }
 
+  final cardSum = calculateCardDigits(numberDigits);
   final verifier = (10 - cardSum % 10) % 10;
   final valid = verifier == lastDigit;
+
   print('Is valid: $valid');
   return valid;
 }
