@@ -1,0 +1,12 @@
+import 'package:dart_playground/lib.dart';
+import 'package:test/test.dart';
+
+void main() {
+  test('should be invalid', () {
+    expect(validateCreditCard('5419 8250 0346 1210'), isFalse);
+  });
+
+  test('should be valid', () {
+    expect(validateCreditCard('4916 6418 5936 9080'), isTrue);
+  });
+}
