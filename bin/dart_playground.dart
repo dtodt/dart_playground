@@ -6,6 +6,7 @@ void main(List<String> arguments) {
   _printChallenge1();
   _printChallenge2();
   _printChallenge3();
+  _printChallenge4();
 }
 
 void _printChallenge1() {
@@ -20,7 +21,14 @@ void _printChallenge2() {
 
 void _printChallenge3() {
   print('$_kChallengeTitle 3 - Credit card validator');
-  validateCreditCard('4916 6418 5936 9080');
+  print('Valid: ${validateCreditCard('5419 8250 0346 1210')}');
   print('');
-  validateCreditCard('5419 8250 0346 1210');
+  print('Valid: ${validateCreditCard('4916 6418 5936 9080')}');
+}
+
+void _printChallenge4() {
+  print('$_kChallengeTitle 4 - CPF validator');
+  print('Valid: ${validateCPF('050.087.420-85')}');
+  print('');
+  print('Valid: ${validateCPF('883.693.590-78')}');
 }

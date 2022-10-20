@@ -13,10 +13,7 @@ bool validateCreditCard(String number) {
   final cardSum = calculateCardDigits(numberDigits);
 
   final verifier = (10 - cardSum % 10) % 10;
-  final valid = verifier == lastDigit;
-
-  print('Is valid: $valid');
-  return valid;
+  return verifier == lastDigit;
 }
 
 int calculateCardDigits(List<int> digits) {
