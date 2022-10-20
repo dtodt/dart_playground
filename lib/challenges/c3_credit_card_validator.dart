@@ -1,31 +1,22 @@
-const _kCleanNumberPattern = r'(\D)';
+import 'package:dart_playground/helpers.dart';
 
 //
 bool validateCreditCard(String number) {
   print('Validating credit card number: $number');
   final cleanedNumber = cleanUpNumber(number);
   final numberDigits = parseNumberDigits(cleanedNumber);
-
-  final lastDigit = numberDigits.removeLast();
-  final allTheSame = numberDigits.every((digit) => digit == lastDigit);
-  if (allTheSame) {
+  if (hasSameDigit(numberDigits)) {
     return false;
   }
 
+  final lastDigit = numberDigits.removeLast();
   final cardSum = calculateCardDigits(numberDigits);
+
   final verifier = (10 - cardSum % 10) % 10;
   final valid = verifier == lastDigit;
 
   print('Is valid: $valid');
   return valid;
-}
-
-String cleanUpNumber(String number) {
-  return number.trim().replaceAll(RegExp(_kCleanNumberPattern), '');
-}
-
-List<int> parseNumberDigits(String number) {
-  return number.split('').map((e) => int.parse(e)).toList();
 }
 
 int calculateCardDigits(List<int> digits) {
