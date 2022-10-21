@@ -13,4 +13,9 @@ void main() {
   test('should be valid', () {
     expect(validateCreditCard('4916 6418 5936 9080'), isTrue);
   });
+
+  test('should generate a valid card', () {
+    final number = generateCreditCard();
+    expect(validateCreditCard(number), isTrue);
+  });
 }
