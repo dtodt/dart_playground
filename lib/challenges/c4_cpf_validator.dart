@@ -37,9 +37,8 @@ int calculateDigit(List<int> digits) {
 int sumDigits(List<int> digits) {
   var multiplier = 2;
   var sum = 0;
-  for (var d = 0; d < digits.length; d++) {
+  for (var d = 0; d < digits.length; d++, multiplier++) {
     sum += digits[d] * multiplier;
-    multiplier++;
   }
   return sum;
 }
