@@ -1,4 +1,16 @@
+import 'dart:math';
+
 import 'package:dart_playground/helpers.dart';
+
+// Extra challenge - credit card generator
+String generateCPF() {
+  final digits = List.generate(9, (index) => Random().nextInt(9));
+  final firstVerifier = calculateDigit(digits);
+  digits.add(firstVerifier);
+  final secondVerifier = calculateDigit(digits);
+  digits.add(secondVerifier);
+  return digits.join();
+}
 
 //
 bool validateCPF(String number) {
@@ -10,22 +22,18 @@ bool validateCPF(String number) {
   }
 
   final secondRef = numberDigits.removeLast();
-  final int secondDigit = calculateDigit(
-    numberDigits.reversed.toList(),
-  );
+  final int secondDigit = calculateDigit(numberDigits);
   if (secondRef != secondDigit) {
     return false;
   }
 
   final firstRef = numberDigits.removeLast();
-  final int firstDigit = calculateDigit(
-    numberDigits.reversed.toList(),
-  );
+  final int firstDigit = calculateDigit(numberDigits);
   return firstRef == firstDigit;
 }
 
 int calculateDigit(List<int> digits) {
-  final digitSum = sumDigits(digits);
+  final digitSum = sumDigits(digits.reversed.toList());
   final rest = digitSum % 11;
   if (rest < 2) {
     return 0;

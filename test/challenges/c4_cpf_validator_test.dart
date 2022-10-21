@@ -9,4 +9,9 @@ void main() {
   test('should be valid', () async {
     expect(validateCPF('883.693.590-78'), isTrue);
   });
+
+  test('should generate a valid cpf', () {
+    final number = generateCPF();
+    expect(validateCPF(number), isTrue);
+  });
 }
