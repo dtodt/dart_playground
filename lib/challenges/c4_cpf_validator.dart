@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:dart_playground/helpers.dart';
 
-// Extra challenge - credit card generator
+// Extra challenge - cpf generator
 String generateCPF() {
   final digits = List.generate(9, (index) => Random().nextInt(9));
   final firstVerifier = calculateDigit(digits);
