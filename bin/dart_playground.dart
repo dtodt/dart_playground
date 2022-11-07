@@ -7,6 +7,7 @@ void main(List<String> arguments) {
   _printChallenge2();
   _printChallenge3();
   _printChallenge4();
+  _printChallenge5();
 }
 
 void _printChallenge1() {
@@ -31,4 +32,16 @@ void _printChallenge4() {
   print('Valid: ${validateCPF('050.087.420-85')}');
   print('');
   print('Valid: ${validateCPF('883.693.590-78')}');
+}
+
+void _printChallenge5() {
+  print('$_kChallengeTitle 5 - Vigenere cipher');
+  final text = 'This text will be criptographed';
+  print('Ciphering: "$text"');
+  final key = VigenereCipher.generateKey(text.length);
+  final encoded = VigenereCipher.encode(key: key, text: text);
+  print('Result: $encoded');
+  print('');
+  print(
+      'Which can be decoded again to: ${VigenereCipher.decode(key: key, text: encoded)}');
 }
