@@ -7,6 +7,7 @@
 1. Rule of three;
 1. Credit card validator;
 1. CPF validator;
+1. Vigenere Cipher;
 
 ## Running
 
